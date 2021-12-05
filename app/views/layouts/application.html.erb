@@ -29,6 +29,7 @@
     <% end %>
 
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+    <%=  link_to "ログイン", new_user_session_path,  class: "button is-warning is-light" %>
 
     <%= yield %>
   </body>
