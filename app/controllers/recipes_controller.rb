@@ -21,6 +21,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def update
+    @recipe =Recipe.find(params[:id])
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:title, :body, :image)
