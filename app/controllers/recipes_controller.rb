@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, expect: [:index]
   def index
     @recipes = Recipe.all
   end
