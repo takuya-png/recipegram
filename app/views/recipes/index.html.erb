@@ -15,6 +15,13 @@
         <div class="column is-4">
           <div class="card">
             <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to recipe_path(recipe) do %>
+                  <%= attachment_image_tag recipe, :image %>
+                <% end %>
+              </figure>
+            </div>
+            
             <td>
               <% if current_user.already_favorited?(recipe) %>
                 <%= link_to recipe_favorites_path(recipe), method: :delete do %>
@@ -28,12 +35,7 @@
                 <%= recipe.favorites.count %>
               <% end %>
             </td>
-              <figure class="image is-4by3">
-                <%= link_to recipe_path(recipe) do %>
-                  <%= attachment_image_tag recipe, :image %>
-                <% end %>
-              </figure>
-            </div>
+
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
